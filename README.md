@@ -7,13 +7,21 @@
 h4. In the application I used:
 
 :white_check_mark: Retrofit
+
 :white_check_mark: Moshi
+
 :white_check_mark: Kotlin Coroutines
+
 :white_check_mark: Hilt
+
 :white_check_mark: MVVM
+
 :white_check_mark: LiveData
+
 :white_check_mark: ViewBinding
+
 :white_check_mark: API test
+
 
  :warning:
  
