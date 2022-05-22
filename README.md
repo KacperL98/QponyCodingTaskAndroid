@@ -24,8 +24,9 @@
  
  ### How to start applications?
  
- You must add the key in local.properties
+ You must add the key in <span style="color: orange">local.properties</span>
 
-API_KEY = "YOUR_API_KEY"
+
+<span style="color: green"> API_KEY = "YOUR_API_KEY" </span>
 
 I had a problem with the API key from [FIXER_API](https://fixer.io/), because I couldn't get the new key. I hope everything works fine.
