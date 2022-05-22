@@ -4,7 +4,7 @@
 
 ### Hello👋
 
-h4. In the application I used:
+### In the application I used:
 
 :white_check_mark: Retrofit
 
@@ -25,7 +25,7 @@ h4. In the application I used:
 
 I had a problem with the API key from [FIXER_API](https://fixer.io/), because I couldn't get the new key. I hope everything works fine.
  
- How to start applications?
+ ### How to start applications?
  
  You must add the key in local.properties
 
