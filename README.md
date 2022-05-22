@@ -22,7 +22,7 @@
 
 :white_check_mark: API test
  
- ### How to start applications?
+ ### How to start app?
  
  You must add the key in local.properties ```API_KEY = "YOUR_API_KEY"```
 
