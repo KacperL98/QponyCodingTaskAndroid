@@ -5,22 +5,20 @@ import kacper.litwinow.qponycodingtaskandroid.constants.DAY_IN_MILLISECONDS
 import kacper.litwinow.qponycodingtaskandroid.constants.LOAD_TIME_COUNT
 import kacper.litwinow.qponycodingtaskandroid.constants.YYYY_MM_DD
 import kacper.litwinow.qponycodingtaskandroid.extension.formatToStringFromLong
-import kacper.litwinow.qponycodingtaskandroid.mapper.CurrencyItemMapper
 import kacper.litwinow.qponycodingtaskandroid.model.Currency
 import kacper.litwinow.qponycodingtaskandroid.model.CurrencyModel
 import javax.inject.Inject
 
 class CurrencyRepository @Inject constructor(
-    private val fixerApi: FixerApi,
-    private val currencyItemMapper: CurrencyItemMapper
+    private val fixerApi: FixerApi
 ) {
 
     suspend fun loadNewestCurrency(date: Long?): List<CurrencyModel?> {
         return if (date != null) {
             val latestCurrencyItems =
-                currencyItemMapper.transformCurrencyToCurrencyItems(getLatestCurrency())
+                transformCurrencyToCurrencyItems(getLatestCurrency())
             val historicalCurrencyItems = loadHistoricalCurrencies(date)
-            currencyItemMapper.mergeListCurrencyItem(latestCurrencyItems, historicalCurrencyItems)
+            mergeListCurrencyItem(latestCurrencyItems, historicalCurrencyItems)
         } else {
             emptyList()
         }
@@ -32,7 +30,7 @@ class CurrencyRepository @Inject constructor(
             var date = oldestDateCurrency
             repeat(LOAD_TIME_COUNT) {
                 historicalItems.addAll(
-                    currencyItemMapper.transformCurrencyToCurrencyItems(
+                    transformCurrencyToCurrencyItems(
                         getHistoricalCurrency(date.formatToStringFromLong(YYYY_MM_DD))
                     )
                 )
@@ -41,6 +39,22 @@ class CurrencyRepository @Inject constructor(
 
             return historicalItems
         } ?: return emptyList()
+    }
+
+    private fun mergeListCurrencyItem(
+        latestCurrencyModels: List<CurrencyModel?>,
+        historicalCurrencyModels: List<CurrencyModel?>
+    ) = (latestCurrencyModels union historicalCurrencyModels).toList()
+
+    private fun transformCurrencyToCurrencyItems(currency: Currency?): List<CurrencyModel?> {
+        return mutableListOf<CurrencyModel>().apply {
+            if (currency != null) {
+                add(CurrencyModel.Date(currency.date))
+                currency.rates?.createRatesHashMap()?.forEach { map ->
+                    add(CurrencyModel.Rate(map.key, map.value, currency.date))
+                }
+            }
+        }
     }
 
 

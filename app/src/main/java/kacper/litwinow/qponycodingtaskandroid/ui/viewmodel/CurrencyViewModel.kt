@@ -8,7 +8,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kacper.litwinow.qponycodingtaskandroid.constants.DAY_IN_MILLISECONDS
 import kacper.litwinow.qponycodingtaskandroid.constants.YYYY_MM_DD
 import kacper.litwinow.qponycodingtaskandroid.extension.formatToDateFromString
-import kacper.litwinow.qponycodingtaskandroid.extension.merge
 import kacper.litwinow.qponycodingtaskandroid.model.CurrencyModel
 import kacper.litwinow.qponycodingtaskandroid.repository.CurrencyRepository
 import kotlinx.coroutines.launch
@@ -37,7 +36,7 @@ class CurrencyViewModel @Inject constructor(
             _progress.postValue(true)
             val newCurrencies = getCurrencies()
             val currentCurrencies = _currencies.value ?: listOf()
-            val updatedCurrencies = merge(currentCurrencies, newCurrencies)
+            val updatedCurrencies = (currentCurrencies union newCurrencies).toList()
             _currencies.postValue(updatedCurrencies)
             _progress.postValue(false)
             isLoadMore = !newCurrencies.isNullOrEmpty()
