@@ -25,4 +25,8 @@ h4. In the application I used:
 
 I had a problem with the API key from [FIXER_API](https://fixer.io/), because I couldn't get the new key. I hope everything works fine.
  
+ How to start applications?
  
+ You must add the key in local.properties
+
+API_KEY = "YOUR_API_KEY"
