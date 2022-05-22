@@ -24,7 +24,7 @@
  
  ### How to start applications?
  
- You must add the key in <span style="color: orange">local.properties</span>
+ You must add the key in + local.properties
 
 
 <span style="color: green"> API_KEY = "YOUR_API_KEY" </span>
