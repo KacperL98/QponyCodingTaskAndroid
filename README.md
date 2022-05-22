@@ -23,8 +23,6 @@ h4. In the application I used:
 :white_check_mark: API test
 
 
- :warning:
- 
- I had a problem with the API key from [FIXER_API](https://fixer.io/). because I couldn't get the new key. I hope everything works fine.
+ :warning: I had a problem with the API key from [FIXER_API](https://fixer.io/). because I couldn't get the new key. I hope everything works fine.
  
  
