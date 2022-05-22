@@ -1,7 +1,5 @@
 package kacper.litwinow.qponycodingtaskandroid.constants
 
-
-const val API_KEY = "f73f15f9f02ab0e89fbad0f867a7420f"
 const val BASE_URL = "http://data.fixer.io/api/"
 
 const val RATE_CURRENCY = "rate_currency"
