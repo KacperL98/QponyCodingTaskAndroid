@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="normal_margin">12dp</dimen>
+    <dimen name="large_margin">32dp</dimen>
+    <dimen name="normal_text_size">16sp</dimen>
+    <dimen name="medium_text_size">24sp</dimen>
+    <dimen name="large_text_size">32sp</dimen>
+
+    <dimen name="small_padding_horizontal">8dp</dimen>
+    <dimen name="medium_padding_horizontal">12dp</dimen>
+    <dimen name="large_padding_horizontal">16dp</dimen>
+
+    <dimen name="small_padding_vertical">8dp</dimen>
+    <dimen name="medium_padding_vertical">12dp</dimen>
+    <dimen name="large_padding_vertical">16dp</dimen>
+
+</resources>
