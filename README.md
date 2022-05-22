@@ -21,12 +21,11 @@
 :white_check_mark: ViewBinding
 
 :white_check_mark: API test
-
-
-I had a problem with the API key from [FIXER_API](https://fixer.io/), because I couldn't get the new key. I hope everything works fine.
  
  ### How to start applications?
  
  You must add the key in local.properties
 
 API_KEY = "YOUR_API_KEY"
+
+I had a problem with the API key from [FIXER_API](https://fixer.io/), because I couldn't get the new key. I hope everything works fine.
